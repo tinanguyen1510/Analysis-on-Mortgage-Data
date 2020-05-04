@@ -33,7 +33,7 @@ The Origination data contains variables that indicate the characteristics of the
 <li>	Property characteristics: Metropolitan Statistical Areas (MSA) , Unit, Occupancy Status, Property State, Property Type, Postal Code </li>
  </ol>  
  
-<img src="header.png"/>  
+<img align="middle" src='header.png'/>
  
 <p>The Performance data contains information on how the loans perform monthly. It contains variable such as Current Unpaid Principal Balance, Loan Status, Loan Age, Number of Years to Maturity, etc. For the purpose of this study, only variable Loan Status from Performance data was used.</p>
   <h3>2. Data Preprocessing </h3>
@@ -48,6 +48,9 @@ The Origination data contains variables that indicate the characteristics of the
     <li>Calculate the Spread at Orgination (SATO) rate </li>
     <strong>SATO (%) = Average Fixed Rate - Stated Interest Rate</strong>
 </ul>
+  <p>The code below is a snipet of the data cleaning process.</p>
+  <img align="middle" src='code_snipet.png' height=75% width=75%/>
+  <br>
       
   
   <h1>Exploratory Data Analysis</h1>
@@ -61,6 +64,7 @@ The Origination data contains variables that indicate the characteristics of the
  
     <h3>2. Borrowers and Loans' Characteristics </h3>
   <div class='tableauPlaceholder' id='viz1588633182512' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Co&#47;Comparisons_15881859506950&#47;Mean&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='Comparisons_15881859506950&#47;Mean' /><param name='tabs' value='yes' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Co&#47;Comparisons_15881859506950&#47;Mean&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1588633182512');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+  <br>
   <p>The plots above calculate the average of each numberical characteristics and compare between performning loans and delinquent loans. Overall, average DTI, LTV, MI percentage, and interest rate of default loans are higher than performing loans. Average credit score and SATO rate of delinquent loans are higher than performing loans. The wide gap in SATO rate between these loan statuses indicates on average, both perfoming loans and delinquent loans received higher interest rates than market average. Additionally, loans that would later delinquent received a much higher interest rates at origination than loans that would later perform.</p>
   
   <h1>Modeling</h1>
@@ -68,11 +72,15 @@ The Origination data contains variables that indicate the characteristics of the
     The data was standardized and split into training and testing sets with the ratio of 7:3. <br>
     The dataset was resampled twice to compare the results of different sampling techinques.<br>
     Classifiers such as Logistic Regression, Decision Tree, and XGBoost were applied.<br>
-    Models were evaluated using precision score. </p>
+    Models were evaluated using precision score. <br>
+    The code below fits different classifers and returns the scores for each model.</p>
+  <img align="middle" src='code_snipet2.png' height=75% width=75%/>
+  <br>
   
   <h3>1. Base Model - Full Population</h3>
   <img align="middle" src='full pop.png' height=75% width=75%/>
-  <p>The above plot shows the class distribution of all loans funded between 2013 and 2018.</p>
+  <br>
+  <p>The plot above shows the class distribution of all loans funded between 2013 and 2018.</p>
   <table style="width:100%">
   <tr>
     <th>Model</th>
@@ -106,6 +114,7 @@ The Origination data contains variables that indicate the characteristics of the
   
   <h3>2. Undersampling 50% </h3>
   <img align="middle" src='under50.png' height=75% width=75%/>
+  <br>
   <p>Undersampling is applied so that the majority class is 50% more than the miniory class. The above plot shows the class distribution after resampling.</p>
   <table style="width:100%">
   <tr>
@@ -139,9 +148,9 @@ The Origination data contains variables that indicate the characteristics of the
 </table>
   
   <h3>3. Combination</h3>
-  <p>The above plot shows the class distribution after the data was oversampled by 20% and undersampled by 30%.</p>
   <img align="middle" src='combine pop.png' height=75% width=75%/>
-
+  <br>
+  <p>The above plot shows the class distribution after the data was oversampled by 20% and undersampled by 30%.</p>
   <table style="width:100%">
   <tr>
     <th>Model</th>
