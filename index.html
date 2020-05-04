@@ -1,12 +1,43 @@
 <!doctype html>
 
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-  <meta charset="utf-8">
-  <title>Test</title>
+<meta name="Mortgage" content="width=device-width, initial-scale=1">
+
+<!-- <link rel="stylesheet" type="text/css" href="webcss.css"> -->
+<!-- <link rel="stylesheet" type="text/css" href="deathcauseStyle.css"> -->
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Eagle Lake' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Crete Round' rel='stylesheet'>
 </head>
+
 <body>
 
+
+<div class="tab">
+  <button class="tablinks" onclick="tabclick(event, 'About')" id="defaultOpen">About</button>
+  <button class="tablinks" onclick="tabclick(event, 'Exploratory Data Analysis')" >Exploratory Data Analysis</button>
+  <button class="tablinks" onclick="tabclick(event, 'Machine Learning Models')">Machine Learning Models</button>
+  
+</div>
+
+<!-- // TAB ABOUT -->
+<div id="About" class="tabcontent" width=100% height=100% )>
+  <h1 class="title">Introduction</h1>
+
+    <p class="col">Mortgage default occurs when a borrower fails to make a repayment to the lender. This project analyzes the characterics of borrowers and loans that would later default using the data available at origination. Being able to flag a bad loan before making a funding decision is an ideal scenario for both the lenders and borrowers. The lenders would be more careful about funding that loan, while the borrowers, if rejected, are not taking more debt than they can repay. Therefore, being able to flag a loan at the origination state is very important. </p>
+
+  </div>
+  
+<h1 class="title">Data</h1>
+
+<h1 class="title">Exploratory Data Analysis</h1>
+
+
+
     <div class='tableauPlaceholder' id='viz1588625289814' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Co&#47;Comparisons_15881859506950&#47;Dashboard1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='Comparisons_15881859506950&#47;Dashboard1' /><param name='tabs' value='yes' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Co&#47;Comparisons_15881859506950&#47;Dashboard1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1588625289814');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.minWidth='1000px';vizElement.style.maxWidth='100%';vizElement.style.minHeight='850px';vizElement.style.maxHeight=(divElement.offsetWidth*0.75)+'px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.minWidth='1000px';vizElement.style.maxWidth='100%';vizElement.style.minHeight='850px';vizElement.style.maxHeight=(divElement.offsetWidth*0.75)+'px';} else { vizElement.style.width='100%';vizElement.style.minHeight='750px';vizElement.style.maxHeight=(divElement.offsetWidth*1.77)+'px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+
+<h1 class="title">Modeling</h1>
 </body>
 </html>
